@@ -2,7 +2,9 @@
 
 ## Table Of Contents
 
-[Finding the GCD](#GCD)
+- [Finding the GCD](#GCD)
+- [Public Key](#PubKey)
+- [Private Key](#PrivKey)
 
 ## Entire Code
 
@@ -10,7 +12,6 @@
 #include<stdio.h>
 #include<math.h>
  
-//to find gcd
 int gcd(int a, int h)
 {
     int temp;
@@ -26,18 +27,14 @@ int gcd(int a, int h)
  
 int main()
 {
-    //2 random prime numbers
     double p = 3;
     double q = 7;
     double n=p*q;
     double count;
     double totient = (p-1)*(q-1);
  
-    //public key
-    //e stands for encrypt
-    double e=2;
+    double e=2;  
  
-    //for checking co-prime which satisfies e>1
     while(e<totient){
     count = gcd(e,totient);
     if(count==1)
@@ -46,14 +43,12 @@ int main()
         e++;
     }
  
-    //private key
-    //d stands for decrypt
     double d;
  
-    //k can be any arbitrary value
+
     double k = 2;
  
-    //choosing d such that it satisfies d*e = 1 + k * totient
+
     d = (1 + (k*totient))/e;
     double msg = 12;
     double c = pow(msg,e);
@@ -76,3 +71,48 @@ int main()
 ```
 
 ## <a name="GCD"></a> GCD
+
+```c
+  int gcd(int a, int h)
+  {
+    int temp;
+    while(1)
+     {
+          temp = a%h;
+          if(temp==0)
+          return h;
+          a = h;
+          h = temp;
+      }
+  }
+
+```
+
+This function above calculates the greatest common divisor of two integers.
+
+## <a name="PubKey"></a> Creating the Public Key
+
+```c
+double totient = (p-1)*(q-1);
+double e=2; 
+
+ while(e<totient){
+    count = gcd(e,totient);
+    if(count==1)
+        break;
+    else
+        e++;
+    }
+```
+
+## <a name="PrivKey"></a> Creating the Private Key
+
+```c
+double d; // initalize integer
+
+...
+
+d = (1 + (k*totient))/e;
+```
+
+Second portion of the code computes the remainder of a number.
