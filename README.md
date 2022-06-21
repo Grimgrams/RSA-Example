@@ -300,7 +300,7 @@ int KeyGeneration()
  
     d = inverse(phi_n, e);
 }
-
+```
 - This is a function that generates random integers.
 - The function starts by generating two random integers, p and q.
 - It then calculates the value of phi_n using the formula: phi_n = (p - 1) * (q - 1); The do-while loop iterates until it has calculated all values of phi_n from 2 to n-1.
@@ -308,8 +308,6 @@ int KeyGeneration()
 - The code attempts to generate a prime number.
 - The while loop iterates until the value of e is greater than or equal to phi_n.
 - Inverse(phi_n, e) calculates the inverse of phi_n modulo e.
-```
-
 ### <a name="Enc"></a> Encrypting The Data
 
 ```c
