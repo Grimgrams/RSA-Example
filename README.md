@@ -266,7 +266,7 @@ int gcd(int a, int b)
 }
 
 ```
--  The code starts by checking if the first integer is greater than the second, in which case it sets r1 to be equal to a and r2 to be equal to b.
+- The code starts by checking if the first integer is greater than the second, in which case it sets r1 to be equal to a and r2 to be equal to b.
 If not, then it sets r1 to be equal to b and r2 to be equal
 The code computes the greatest common divisor of two integers.
 
