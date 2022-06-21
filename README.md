@@ -1,5 +1,7 @@
 # RSA-Example
 
+This document is used to explain some code for a math assignment. The code below is an example of [RSA Encryption](https://en.wikipedia.org/wiki/RSA_(cryptosystem)).
+
 ## Table Of Contents
 
 - [Finding the GCD](#GCD)
