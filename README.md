@@ -25,6 +25,7 @@ int gcd(int a, int h)
         a = h;
         h = temp;
     }
+    return h;
 }
  
 int main()
@@ -82,10 +83,10 @@ int main()
      {
           temp = a%h;
           if(temp==0)
-          return h;
           a = h;
           h = temp;
       }
+      return h;
   }
 
 ```
